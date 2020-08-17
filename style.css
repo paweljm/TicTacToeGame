@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border: solid black 1px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
+}
+.container div {
+    width: 200px;
+    height: 200px;
+    border: blue 1px solid;
+    font-size: 3rem;
+}
