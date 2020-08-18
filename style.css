@@ -7,7 +7,7 @@
     margin: auto;
     border: solid black 1px;
     display: grid;
-    grid-auto-flow: column;
+    grid-auto-flow: row;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr; 
 }
@@ -15,5 +15,7 @@
     width: 200px;
     height: 200px;
     border: blue 1px solid;
-    font-size: 3rem;
+    font-size: 6rem;
+    text-align: center;
+    padding-top: 25%;
 }
