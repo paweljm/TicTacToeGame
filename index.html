@@ -17,8 +17,8 @@
         <fieldset class ="menu">
             <legend>Menu</legend>
             <h2>Enter Player Names</h2>
-            <button id="2p">2 Player</button>
-            <button id="PC">Vs. AI</button>
+            <button type ='button' id="twoP">2 Player</button>
+            <button type ='button' id="PC">Vs. AI</button>
             <br>
             <br>
             <label for="p1-name">Player X:</label>
@@ -27,10 +27,12 @@
             <label for="p2-name">Player O:</label>
             <input type="text" name="p2-name" id="p2-name">
             <br>
-            <button id="play">PLAY</button>
+            <button type ='button' id="play">PLAY</button>
         </fieldset>
     </form>
     <div class="winScreen">
+        <h2 id="winText"></h2>
+        <button id="reset-button">Play Again</button>
     </div>
     <script src="script.js"></script>
 </body>

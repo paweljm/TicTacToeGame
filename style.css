@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    user-select: none;
 }
 body {
     background-color: #74c69d;
@@ -101,6 +102,9 @@ button:hover {
 button:active {
     top:5px;
 }
+button:disabled {
+    background-color: lightslategray;
+}
 label {
     font-size:1.2rem;
 }
@@ -122,4 +126,7 @@ input[type="text"]{
     height:100px;
     font-size: 2rem;
     width:250px;
+}
+.winScreen button {
+    display: none;
 }
