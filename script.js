@@ -1,42 +1,68 @@
 const gameBoard = (()=>{
-    let board = ['0','1','2','3','4','5','6','7','8'];
+    let board = ['','','','','','','','',''];
     const getBoard = () => board;
     const getIndex = (index) => board[index];
     const setIndex = (index,marker) => {
         if(index < 9) {
-            if(getIndex(index) != 'x'||getIndex(index) != '0') {
-                board[index] = marker;
-                displayController.updateBoard();
-            }
+            board[index] = marker;
+            displayController.updateBoard();
         }
 
     } 
-    return {getBoard,setIndex,getIndex};
+    const resetBoard = () => {
+        board = ['','','','','','','','',''];
+        displayController.updateBoard();
+    }
+    return {getBoard,setIndex,getIndex,resetBoard};
 })();
 const displayController = (()=>{
+    let turnCount = 0;
     const playArea = document.querySelector('.container');
     const renderField = (board) => {
         for(let i = 0;i<board.length;i++){
             const divs = document.createElement('div');
+            divs.setAttribute('id',i);
             divs.textContent = gameBoard.getIndex(i);
+            divs.addEventListener('click', (e) => {
+                makePlay(i);
+            });
             playArea.appendChild(divs);
         }
     }
     const updateBoard = () => {
-        for(let i = 1;i<10;i++){
-            playArea.childNodes[i].textContent = gameBoard.getIndex(i-1);
+        for(let i = 0;i<9;i++){
+            document.getElementById(i).textContent = gameBoard.getIndex(i);
         } 
     };
-    return {renderField,updateBoard};
+    const checkValid = (index) => {
+        if(gameBoard.getIndex(index) != ""){
+            return false;
+        } else {
+            return true;
+        }
+    }
+    const makePlay = (index) => {
+        if(checkValid(index) != true){
+            //alert('invalid');
+            return;
+        } else {
+            if (turnCount % 2 == 0) {
+                gameBoard.setIndex(index,p1.getMarker());
+                turnCount++;
+            } else if (turnCount % 2 != 0) {
+                gameBoard.setIndex(index,p2.getMarker());
+                turnCount++;
+            }
+        }
+    } 
+    return {renderField,updateBoard,makePlay};
 })();
 const player = (name, marker) => {
-    const getName = () => name;
+    let Pname = name;
+    const getName = () => Pname;
     const getMarker = () => marker;
-    const makePlay = () => {
-        let input = prompt('play:')
-        gameBoard.setIndex(input, marker);
-    }
-    return {getName,getMarker,makePlay};
+    const setName = (input) => name = input;
+    return {getName,getMarker};
 };
 displayController.renderField(gameBoard.getBoard());
 let p1 = player('p1','x');
