@@ -1,37 +1,125 @@
 * {
     box-sizing: border-box;
 }
+body {
+    background-color: #74c69d;
+}
 h1 {
     text-align: center;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 6rem;
+    line-height: 0px;
+    color: #103126;
 }
 .container {
-    width: 600px;
-    height: 600px;
-    margin: auto;
-    border: solid black 1px;
+    width: 390px;
+    height: 390px;
+    margin-left: 20%;
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr; 
+    box-sizing: unset;
+    border-radius: 15px;
+    float: left;
+    background-color: #40916c;
 }
 .container div {
-    width: 200px;
-    height: 200px;
-    border: blue 1px solid;
-    font-size: 3rem;
+    width: 130px;
+    height: 130px;
+    border: #95d5b2 5px solid;
+    line-height: 130px;
+    font-size: 120px;
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+    user-select: none;
 }
-.splash {
-    position: fixed;
-    bottom: 5%;
-    top:5%;
-    right:20%;
-    left:20%;
-    width:60%;
-    height:90%;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
+.menu {
+    display: inline-block;
+    width:300px;
+    height:390px;
+    margin-left: 5%;
+    border: solid 5px #95d5b2;
+    background-color: #40916c;
+}
+form  {
+    font-family: 'Baloo Tamma 2', cursive;
+    color: #103126;
 }
 h2 {
-    font-size: 3rem;
     text-align: center;
+}
+.validSquare {
+    cursor: pointer;
+}
+.validSquare:hover {
+    box-shadow: 0px 0px 10px #d8f3dc inset;
+}
+.invalidSquare {
+    cursor: default;
+}
+legend {
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+    background-color: #74c69d;
+    color:#40916c;
+    font-weight: bold;
+    border-radius:50%;
+}
+button {
+    font-family: 'Baloo Tamma 2', cursive;
+    color: #103126;
+    background-color: #d8f3dc;
+    outline: none;
+    border: none;
+    position: relative;
+    bottom:0px;
+    top: 0px;
+    transition:bottom 0.1s, top 0.1s;
+    width: 120px;
+    height:30px;
+    border-radius:5px;
+}
+#2p {
+    float: left;
+}
+#PC{
+    float:right;
+}
+#play {
+    width:80%;
+    height: 20%;
+    margin: 50px 10%;
+    font-size: 3rem;
+}
+button:hover {
+    position: relative;
+    bottom:2px;
+    cursor: pointer;
+}
+button:active {
+    top:5px;
+}
+label {
+    font-size:1.2rem;
+}
+input[type="text"]{
+    width:60%;
+    height:1.5rem;
+    float:right;
+    background-color: #d8f3dc;
+    border:none;
+    outline: none;
+}
+.winScreen h2{
+    font-size: 3rem;
+    font-family: 'Baloo Tamma 2', cursive;
+    color: #103126;
+}
+#reset-button{
+    margin: 0px 40%;
+    height:100px;
+    font-size: 2rem;
+    width:250px;
 }

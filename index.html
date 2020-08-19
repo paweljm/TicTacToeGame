@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
     <title>Tic Tac Toe</title>
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
     <div class="container">
     </div>
-    <!--<div class="splash">
-        <h2>Enter Player Names</h2>
-    </div> -->
+    <form>
+        <fieldset class ="menu">
+            <legend>Menu</legend>
+            <h2>Enter Player Names</h2>
+            <button id="2p">2 Player</button>
+            <button id="PC">Vs. AI</button>
+            <br>
+            <br>
+            <label for="p1-name">Player X:</label>
+            <input type="text" name="p1-name" id="p1-name">
+            <br>
+            <label for="p2-name">Player O:</label>
+            <input type="text" name="p2-name" id="p2-name">
+            <br>
+            <button id="play">PLAY</button>
+        </fieldset>
+    </form>
+    <div class="winScreen">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
